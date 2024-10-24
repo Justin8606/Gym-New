@@ -1,0 +1,17 @@
+/* .mapview{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+} */
+
+.mapview {
+    width: 100%;
+    height: 100vh; /* Ensure it takes full viewport height */
+    border-radius: 20px;
+    position: relative; /* Ensure proper positioning */
+}
+
+.pin-popup {
+    min-width: 150px; /* Minimum width of the popup */
+}
+

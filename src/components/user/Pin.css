@@ -1,0 +1,14 @@
+.pin-popup {
+    min-width: 150px; /* Minimum width of the popup */
+}
+
+.pin-popup h5 {
+    margin: 0; /* Remove margin for the title */
+    font-size: 1.2em; /* Font size for the title */
+}
+
+.pin-popup p {
+    margin: 4px 0; /* Space between paragraphs */
+    font-size: 1em; /* Font size for the text */
+    color: #333; /* Text color */
+}
