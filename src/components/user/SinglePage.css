@@ -1,0 +1,90 @@
+/* SinglePage.css */
+
+/* Container for the whole page */
+.gym-details-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gym-details-container h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .gym-details-container p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  /* Section headers */
+  .gym-details-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* List styling */
+  .gym-details-container ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+  
+  .gym-details-container li {
+    color: #555;
+    margin: 0.3rem 0;
+  }
+  
+  /* Styling for availability text */
+  .gym-details-container .availability {
+    font-weight: bold;
+    color: #006400; /* Green for available */
+  }
+  
+  .gym-details-container .unavailable {
+    font-weight: bold;
+    color: #b22222; /* Red for not available */
+  }
+  
+  /* Images styling */
+  .gym-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .gym-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button for any action (if needed) */
+  .gym-details-container .action-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gym-details-container .action-btn:hover {
+    background-color: #0056b3;
+  }
+  

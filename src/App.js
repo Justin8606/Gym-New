@@ -5,6 +5,7 @@ import AdminHome from './components/admin/AdminHome';
 import LoginPage from './components/user/LoginPage';
 import RegisterPage from './components/user/RegisterPage';
 import HomePage from './components/user/HomePage';
+import SinglePage from './components/user/SinglePage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<LoginPage/>}/>
       <Route path='/register' element={<RegisterPage/>}/>
       <Route path='/home' element={<HomePage/>}/>
+      <Route path='/gyms/:id' element={<SinglePage/>}/>
     </Routes>
     </BrowserRouter>
   );
