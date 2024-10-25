@@ -6,6 +6,7 @@ import LoginPage from './components/user/LoginPage';
 import RegisterPage from './components/user/RegisterPage';
 import HomePage from './components/user/HomePage';
 import SinglePage from './components/user/SinglePage';
+import ProfilePage from './components/user/ProfilePage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/register' element={<RegisterPage/>}/>
       <Route path='/home' element={<HomePage/>}/>
       <Route path='/gyms/:id' element={<SinglePage/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
     </Routes>
     </BrowserRouter>
   );

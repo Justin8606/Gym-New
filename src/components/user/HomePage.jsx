@@ -381,17 +381,120 @@
 // export default HomePage;
 
 
+// import React, { useEffect, useState } from "react";
+// import axios from "axios";
+// import { Link } from "react-router-dom"; // Import Link from react-router-dom
+// import "./HomePage.css"; // CSS file for custom styling
+// import MapView from "./MapView"; // Import the MapView component
+
+// const HomePage = () => {
+//   const [gyms, setGyms] = useState([]);
+//   const [searchQuery, setSearchQuery] = useState(""); // State for search bar input
+
+//   // Fetch gyms from the backend when the component mounts
+//   const fetchGyms = async (query = "") => {
+//     try {
+//       const response = await axios.get(`http://localhost:8080/gyms`, {
+//         params: { location: query }
+//       });
+//       if (response.data.status === "success") {
+//         setGyms(response.data.gyms);
+//       }
+//     } catch (error) {
+//       console.error("Error fetching gyms", error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchGyms(); // Fetch all gyms on initial load
+//   }, []);
+
+//   // Handle search button click
+//   const handleSearch = () => {
+//     fetchGyms(searchQuery); // Fetch gyms based on search query
+//   };
+
+//   return (
+//     <div className="container mt-5">
+//       <h2 className="text-center mb-4">Available Gyms</h2>
+
+//       {/* Search bar with a search button */}
+//       <div className="search-bar mb-4 d-flex">
+//         <input
+//           type="text"
+//           className="form-control"
+//           placeholder="Search by location"
+//           value={searchQuery}
+//           onChange={(e) => setSearchQuery(e.target.value)}
+//         />
+//         <button className="btn btn-primary ml-2" onClick={handleSearch}>
+//           Search
+//         </button>
+//       </div>
+
+//       <div className="row">
+//         <div className="col-md-6">
+//           {/* Gyms listing */}
+//           {gyms.length > 0 ? (
+//             gyms.map((gym) => (
+//               <div className="col-md-12 mb-4" key={gym._id}>
+//                 {/* Use Link to pass the gym's ID */}
+//                 <Link to={`/gyms/${gym._id}`} className="gym-link"> 
+//                   <div className="card h-100">
+//                     {/* Display image */}
+//                     {gym.images && gym.images.length > 0 && (
+//                       <img
+//                         src={gym.images[0]} // Display the first image
+//                         alt={gym.name}
+//                         className="card-img-top"
+//                         style={{ maxHeight: "200px", objectFit: "cover" }}
+//                       />
+//                     )}
+//                     <div className="card-body">
+//                       <h5 className="card-title">{gym.name}</h5>
+//                       <p className="card-text">
+//                         <strong>Location:</strong> {gym.location}
+//                       </p>
+//                       <p className="card-text">
+//                         <strong>Price:</strong> {gym.price}
+//                       </p>
+//                       <p className="card-text">
+//                         <strong>Rating:</strong> {gym.rating ? gym.rating : "No rating available"}
+//                       </p>
+//                     </div>
+//                   </div>
+//                 </Link>
+//               </div>
+//             ))
+//           ) : (
+//             <p className="text-center">No gyms found for this location.</p>
+//           )}
+//         </div>
+
+//         <div className="col-md-6">
+//           {/* Map view */}
+//           <MapView items={gyms} />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomePage;
+
+//next code is to add navbar //extra after rating
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import "./HomePage.css"; // CSS file for custom styling
-import MapView from "./MapView"; // Import the MapView component
+import { Link, useNavigate } from "react-router-dom";
+import "./HomePage.css"; 
+import MapView from "./MapView"; 
 
 const HomePage = () => {
   const [gyms, setGyms] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search bar input
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
-  // Fetch gyms from the backend when the component mounts
   const fetchGyms = async (query = "") => {
     try {
       const response = await axios.get(`http://localhost:8080/gyms`, {
@@ -406,19 +509,39 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    fetchGyms(); // Fetch all gyms on initial load
+    fetchGyms();
   }, []);
 
-  // Handle search button click
   const handleSearch = () => {
-    fetchGyms(searchQuery); // Fetch gyms based on search query
+    fetchGyms(searchQuery);
   };
 
   return (
     <div className="container mt-5">
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            Gym-Connect
+          </Link>
+          <div className="ml-auto">
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => navigate("/profile")}
+              style={{
+                borderRadius: "25px",
+                padding: "5px 20px",
+                fontWeight: "bold",
+              }}
+            >
+              Profile
+            </button>
+          </div>
+        </div>
+      </nav>
+
       <h2 className="text-center mb-4">Available Gyms</h2>
 
-      {/* Search bar with a search button */}
       <div className="search-bar mb-4 d-flex">
         <input
           type="text"
@@ -434,17 +557,14 @@ const HomePage = () => {
 
       <div className="row">
         <div className="col-md-6">
-          {/* Gyms listing */}
           {gyms.length > 0 ? (
             gyms.map((gym) => (
               <div className="col-md-12 mb-4" key={gym._id}>
-                {/* Use Link to pass the gym's ID */}
-                <Link to={`/gyms/${gym._id}`} className="gym-link"> 
+                <Link to={`/gyms/${gym._id}`} className="gym-link">
                   <div className="card h-100">
-                    {/* Display image */}
                     {gym.images && gym.images.length > 0 && (
                       <img
-                        src={gym.images[0]} // Display the first image
+                        src={gym.images[0]}
                         alt={gym.name}
                         className="card-img-top"
                         style={{ maxHeight: "200px", objectFit: "cover" }}
@@ -459,7 +579,7 @@ const HomePage = () => {
                         <strong>Price:</strong> {gym.price}
                       </p>
                       <p className="card-text">
-                        <strong>Rating:</strong> {gym.rating ? gym.rating : "No rating available"}
+                        <strong>Rating:</strong> {gym.rating || "No rating available"}
                       </p>
                     </div>
                   </div>
@@ -472,7 +592,6 @@ const HomePage = () => {
         </div>
 
         <div className="col-md-6">
-          {/* Map view */}
           <MapView items={gyms} />
         </div>
       </div>
