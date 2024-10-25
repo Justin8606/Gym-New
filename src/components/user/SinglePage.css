@@ -88,3 +88,36 @@
     background-color: #0056b3;
   }
   
+
+  .rating-stars {
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 24px; /* Adjust the size as needed */
+    color: lightgray; /* Default star color */
+  }
+  
+  .star.selected {
+    color: gold; /* Color for selected stars */
+  }
+  
+
+  .rating-stars {
+  cursor: pointer;
+}
+
+.star {
+  font-size: 24px; /* Adjust the size as needed */
+  color: lightgray; /* Default star color */
+  transition: color 0.2s ease; /* Smooth transition for color change */
+}
+
+.star.selected {
+  color: gold; /* Color for selected stars */
+}
+
+/* Optional hover effect */
+.star:hover {
+  color: orange; /* Color when hovering over a star */
+}
