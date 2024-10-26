@@ -508,6 +508,7 @@ const HomePage = () => {
     }
   };
 
+  
   useEffect(() => {
     fetchGyms();
   }, []);
@@ -517,6 +518,7 @@ const HomePage = () => {
   };
 
   return (
+    
     <div className="container mt-5">
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">

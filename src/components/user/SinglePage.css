@@ -121,3 +121,43 @@
 .star:hover {
   color: orange; /* Color when hovering over a star */
 }
+
+
+
+
+
+.booking-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  
+  .back-button {
+    background-color: #af544c;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #ca0f0f;
+  }

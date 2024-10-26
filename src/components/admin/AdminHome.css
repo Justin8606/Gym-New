@@ -56,3 +56,39 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+/* Custom styles for the navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.8rem; /* Increase font size for brand */
+    font-weight: bold; /* Make brand text bold */
+    color: #007BFF; /* Lighter blue for brand text */
+    text-transform: uppercase; /* Uppercase brand text */
+}
+
+.navbar-nav {
+    margin-left: auto; /* Push nav items to the right */
+}
+
+.nav-link {
+    font-size: 1.2rem; /* Increase font size for links */
+    color: #007BFF; /* Lighter blue for link text */
+    padding: 15px 20px; /* Add padding to links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light background on hover */
+    color: #0056b3; /* Darker blue text on hover */
+    border-radius: 5px; /* Add rounded corners on hover */
+}
+
+.nav-item.active .nav-link {
+    background-color: rgba(0, 123, 255, 0.2); /* Active link background color */
+    color: #0056b3; /* Darker blue for active link */
+    border-radius: 5px; /* Add rounded corners for active link */
+}

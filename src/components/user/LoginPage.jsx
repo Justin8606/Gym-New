@@ -126,6 +126,9 @@ const LoginPage = () => {
       <p className="register-link">
         Don’t have an account? <a onClick={() => navigate('/register')}>Register here</a>
       </p>
+      <p className="register-link">
+        Admin Login <a onClick={() => navigate('/admin')}>Login here</a>
+      </p>
     </div>
   );
 };

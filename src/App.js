@@ -7,6 +7,8 @@ import RegisterPage from './components/user/RegisterPage';
 import HomePage from './components/user/HomePage';
 import SinglePage from './components/user/SinglePage';
 import ProfilePage from './components/user/ProfilePage';
+import BookingPage from './components/user/BookingPage';
+import BookingView from './components/admin/BookingView';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path='/home' element={<HomePage/>}/>
       <Route path='/gyms/:id' element={<SinglePage/>}/>
       <Route path='/profile' element={<ProfilePage/>}/>
+      <Route path='/bookings' element={<BookingPage/>}/>
+      <Route path='/view-booking' element={<BookingView/>}/>
     </Routes>
     </BrowserRouter>
   );
