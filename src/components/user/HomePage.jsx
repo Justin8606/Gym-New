@@ -526,6 +526,13 @@ const HomePage = () => {
           <Link className="navbar-brand" to="/">
             Gym-Connect
           </Link>
+          <Link className="" to="/about">
+            About
+          </Link>
+          <Link className="" to="/contact">
+            Contact
+          </Link>
+          
           <div className="ml-auto">
             <button
               className="btn btn-outline-primary"

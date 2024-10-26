@@ -353,7 +353,7 @@ const ProfilePage = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (notificationResponse.data.status === "success") {
-          setNotifications(notificationResponse.data.notifications);
+          setNotifications(notificationResponse.data.notifications.slice().reverse());
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -374,7 +374,7 @@ const ProfilePage = () => {
 
         {/* My Bookings section */}
         <h3>My Bookings</h3>
-        {bookings.length > 0 ? (
+        {/* {bookings.length > 0 ? (
           <div className="bookings-list">
             {bookings.map((booking) => (
               <Link to={`/gyms/${booking.gymId._id}`} key={booking._id} className="gym-link">
@@ -400,7 +400,41 @@ const ProfilePage = () => {
           </div>
         ) : (
           <p>No bookings found.</p>
-        )}
+        )} */}
+        {bookings.length > 0 ? (
+  <div className="bookings-list">
+    {bookings.map((booking) => (
+      // Check if gymId exists before rendering
+      booking.gymId ? (
+        <Link to={`/gyms/${booking.gymId._id}`} key={booking._id} className="gym-link">
+          <div className="card h-100 mb-4">
+            {booking.gymId.images && booking.gymId.images.length > 0 && (
+              <img
+                src={booking.gymId.images[0]}
+                alt={booking.gymId.name}
+                className="card-img-top"
+                style={{ maxHeight: "200px", objectFit: "cover" }}
+              />
+            )}
+            <div className="card-body">
+              <h5 className="card-title">{booking.gymId.name}</h5>
+              <p className="card-text"><strong>Location:</strong> {booking.gymId.location}</p>
+              <p className="card-text"><strong>Price:</strong> ${booking.gymId.price}</p>
+              <p className="card-text"><strong>Booking Date:</strong> {new Date(booking.bookingDate).toLocaleDateString()}</p>
+              <p className="card-text"><strong>Time Slot:</strong> {booking.timeSlot}</p>
+            </div>
+          </div>
+        </Link>
+      ) : (
+        // Fallback message if gymId is null
+        <p key={booking._id} className="error-text">Gym information not available (may have been removed).</p>
+      )
+    ))}
+  </div>
+) : (
+  <p>No bookings found.</p>
+)}
+
       </div>
 
       {/* Right section: Notifications */}

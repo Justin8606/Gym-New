@@ -9,6 +9,8 @@ import SinglePage from './components/user/SinglePage';
 import ProfilePage from './components/user/ProfilePage';
 import BookingPage from './components/user/BookingPage';
 import BookingView from './components/admin/BookingView';
+import About from './components/user/About';
+import Contact from './components/user/Contact';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Route path='/profile' element={<ProfilePage/>}/>
       <Route path='/bookings' element={<BookingPage/>}/>
       <Route path='/view-booking' element={<BookingView/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/contact' element={<Contact/>}/>
     </Routes>
     </BrowserRouter>
   );
