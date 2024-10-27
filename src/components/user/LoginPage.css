@@ -60,3 +60,95 @@
     text-decoration: underline;
   }
   
+
+
+
+  /* design focused */
+
+  /* LandingPage.css */
+
+.landing-page-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-section {
+  flex: 1;
+  /* background-color: #f5f5f5; */
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.landing-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.tagline-description {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.right-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #28a745;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.register-link {
+  margin-top: 1rem;
+  color: #007bff;
+  cursor: pointer;
+}

@@ -173,9 +173,132 @@
 
 // export default RegisterPage;
 
+
+
+
+
+
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { Link } from "react-router-dom";  // Import Link if using React Router
+
+// const RegisterPage = () => {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     phone: "",
+//     gender: "",
+//     password: "",
+//   });
+
+//   const [message, setMessage] = useState("");
+
+//   // Handle input changes
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   // Handle form submission
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await axios.post("http://localhost:8080/signup", formData);
+//       if (response.data.status === "success") {
+//         setMessage("Registration successful! You can now go to the home page.");
+//       } else {
+//         setMessage("Registration failed, please try again.");
+//       }
+//     } catch (error) {
+//       setMessage("Error occurred during registration.");
+//       console.error(error);
+//     }
+//   };
+
+//   return (
+//     <div className="register-page">
+//       <h2>Register</h2>
+//       <form onSubmit={handleSubmit}>
+//         <div>
+//           <label htmlFor="name">Name:</label>
+//           <input
+//             type="text"
+//             id="name"
+//             name="name"
+//             value={formData.name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="email">Email:</label>
+//           <input
+//             type="email"
+//             id="email"
+//             name="email"
+//             value={formData.email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="phone">Phone:</label>
+//           <input
+//             type="text"
+//             id="phone"
+//             name="phone"
+//             value={formData.phone}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="gender">Gender:</label>
+//           <select
+//             id="gender"
+//             name="gender"
+//             value={formData.gender}
+//             onChange={handleChange}
+//             required
+//           >
+//             <option value="">Select gender</option>
+//             <option value="Male">Male</option>
+//             <option value="Female">Female</option>
+//             <option value="Other">Other</option>
+//           </select>
+//         </div>
+//         <div>
+//           <label htmlFor="password">Password:</label>
+//           <input
+//             type="password"
+//             id="password"
+//             name="password"
+//             value={formData.password}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <button type="submit">Register</button>
+//               {/* Centered link to the landing page */}
+//       <p className="center-link">Already have an account? <Link to="/">Go to home page</Link></p>  {/* Link to '/' */}
+//       </form>
+
+//       {message && <p>{message}</p>}
+
+
+//     </div>
+//   );
+// };
+
+// export default RegisterPage;
+
+//design focused
+
+
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";  // Import Link if using React Router
+import { Link } from "react-router-dom";
+import './RegisterPage.css';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -188,13 +311,11 @@ const RegisterPage = () => {
 
   const [message, setMessage] = useState("");
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -211,76 +332,85 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-page">
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone:</label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="gender">Gender:</label>
-          <select
-            id="gender"
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-              {/* Centered link to the landing page */}
-      <p className="center-link">Already have an account? <Link to="/">Go to home page</Link></p>  {/* Link to '/' */}
-      </form>
+    <div className="register-page-container">
+      {/* Left Side: Message and Image */}
+      <div className="left-section">
+        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Attractive gym" className="register-image" />
+        <h1 className="register-tagline">Join GymConnect Today!</h1>
+        <p className="register-description">Discover top-rated gyms and start your fitness journey.</p>
+      </div>
 
-      {message && <p>{message}</p>}
-
-
+      {/* Right Side: Registration Form */}
+      <div className="right-section">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="phone">Phone:</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="gender">Gender:</label>
+            <select
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit">Register</button>
+          
+        </form>
+        <p className="center-link">
+            Already have an account? <Link to="/">Go to Login page</Link>
+          </p>
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 };

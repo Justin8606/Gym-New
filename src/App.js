@@ -11,6 +11,7 @@ import BookingPage from './components/user/BookingPage';
 import BookingView from './components/admin/BookingView';
 import About from './components/user/About';
 import Contact from './components/user/Contact';
+import Navbar from './components/user/Navbar';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path='/view-booking' element={<BookingView/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/contact' element={<Contact/>}/>
+      <Route path='/nav' element={<Navbar/>}/>
     </Routes>
     </BrowserRouter>
   );

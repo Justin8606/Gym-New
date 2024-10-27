@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css"; // Make sure to create this CSS file
+import Navbar from "./Navbar";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -17,6 +18,8 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <Navbar /> {/* Navbar is outside the main container now */}
     <div className="contact-container">
       <h1>Contact Us</h1>
       <p className="contact-description">
@@ -59,6 +62,7 @@ const Contact = () => {
       </form>
       {submitted && <p className="success-message">Your message has been sent!</p>}
     </div>
+    </>
   );
 };
 
